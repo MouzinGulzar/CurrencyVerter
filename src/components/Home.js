@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
-  const API_KEY = "c719d132abc4d5414d13fd30";
+  const API_KEY = "52b681c1faa85fcaef14b9a4";
   let url = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/USD`;
   // let url = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/USD`;
 
@@ -158,17 +158,17 @@ export default function Home() {
           />
           {removeButton(toRemove)}
         </div>
-          <a
-            href="https://www.easymarkets.com/int/learn-centre/discover-trading/currency-acronyms-and-abbreviations/"
-            target="_blank"
-            noreferrer
-          >
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button">
-            Check Acronym for Your Currency
-          </button>
-        </div>
-          </a>
+        <a
+          href="https://www.easymarkets.com/int/learn-centre/discover-trading/currency-acronyms-and-abbreviations/"
+          target="_blank"
+          noreferrer
+        >
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">
+              Check Acronym for Your Currency
+            </button>
+          </div>
+        </a>
       </div>
     </>
   );

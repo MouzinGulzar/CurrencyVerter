@@ -160,10 +160,10 @@ export default function Home() {
         <a
           href="https://www.easymarkets.com/int/learn-centre/discover-trading/currency-acronyms-and-abbreviations/"
           target="_blank"
-          noreferrer
+          noreferrer="true"
         >
-          <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button">
+          <div className="d-grid gap-2">
+            <button className="btn btn-primary" type="button">
               Check Acronym for Your Currency
             </button>
           </div>

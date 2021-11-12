@@ -42,7 +42,6 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setConversionRate(Number(parseFloat(data.conversion_rate).toFixed(3)));
-        console.log(Number(parseFloat(data.conversion_rate).toFixed(3)));
       });
   };
 

@@ -77,11 +77,11 @@ export default function Home() {
   };
 
   const fromRemove = () => {
-    setFromValue();
+    setFromValue("");
   };
 
   const toRemove = () => {
-    setToValue();
+    setToValue("");
   };
 
   const removeButton = (props) => {

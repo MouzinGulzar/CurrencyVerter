@@ -20,7 +20,7 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown" style={{position: "absolute", right: "5% "}}>
+          <div className="collapse navbar-collapse" id="navbarNavDropdown" style={{position: "absolute", right: "2% "}}>
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link active" to="/about">

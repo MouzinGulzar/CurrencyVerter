@@ -13,7 +13,6 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Alert />
             <Home />
           </Route>
           <Route exact path="/about">

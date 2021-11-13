@@ -51,11 +51,11 @@ export default function Home() {
 
   useEffect(() => {
     calculateForward(fromValue, conversionRate);
-  }, [fromCurrency, toCurrency, fromValue, conversionRate]);
+  }, [fromCurrency, toCurrency, fromValue]);
 
   useEffect(() => {
     calculateBackward(toValue, conversionRate);
-  }, [fromCurrency, toCurrency, toValue, conversionRate]);
+  }, [fromCurrency, toCurrency, toValue]);
 
   const handleFromCurrency = (event) => {
     setFromCurrency(event.target.value);
@@ -66,12 +66,10 @@ export default function Home() {
   };
 
   const handleFromValue = (event) => {
-    // calculateForward(fromValue, conversionRate);
     setFromValue(event.target.value);
   };
 
   const handleToValue = (event) => {
-    // calculateBackward(toValue, conversionRate);
     setToValue(event.target.value);
   };
 

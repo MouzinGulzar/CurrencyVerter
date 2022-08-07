@@ -83,7 +83,7 @@ export default function About() {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="mailto:mouzingulzar.work@gmail.com?subject=Feedback%20-%20CurrencyVerter"
+                    href="mailto:mouzingulzar.work@gmail.com?subject=Feedback%20-%20Curverter"
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     <span>

@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 
 export default function About() {
   return(
-    <div className="container">
-      <h1 class="display-2 mt-4">About Us</h1>
-      <div class="card w-100 mt-3">
+    <div>
+     <h1 className="mt-4" style={{ fontWeight: "bold" }}>
+        About Us
+      </h1>
+      <div className="container text-left">
+        <div class="card w-100 mt-3">
           <div class="card-body">
             <h5 class="card-title" style={{fontWeight:"bold", color: "#0d6efd" }}>
               Introduction
@@ -96,6 +99,6 @@ export default function About() {
           </div>
         </div>
     </div>
-
+</div>
   )
 }

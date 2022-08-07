@@ -13,7 +13,9 @@ export default function Home() {
           data.base_code,
           ...Object.keys(data.conversion_rates),
         ]);
+        console.log(data.conversion_rates);
       });
+    // eslint-disable-next-line
   }, []);
 
   const [currencyOptions, setCurrencyOptions] = useState([]);
@@ -21,7 +23,9 @@ export default function Home() {
   const [fromValue, setFromValue] = useState("");
   const [toCurrency, setToCurrency] = useState("USD");
   const [toValue, setToValue] = useState("");
-  const [conversionRate, setConversionRate] = useState(0.01345);
+  const [conversionRate, setConversionRate] = useState("");
+  const from = document.getElementById("from_input");
+  const to = document.getElementById("to_input");
 
   const calculateForward = (amount, rate) => {
     fromValue !== ""
@@ -41,7 +45,8 @@ export default function Home() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setConversionRate(Number(parseFloat(data.conversion_rate).toFixed(3)));
+        setConversionRate(Number(parseFloat(data.conversion_rate)));
+        console.log(conversionRate);
       });
   };
 
@@ -50,12 +55,18 @@ export default function Home() {
   }, [fromCurrency, toCurrency, conversionRate]);
 
   useEffect(() => {
-    calculateForward(fromValue, conversionRate);
-  }, [fromCurrency, toCurrency, fromValue]);
-
+    if ((from === document.activeElement)) {
+      calculateForward(fromValue, conversionRate);
+      // eslint-disable-next-line
+    }
+  }, [conversionRate, fromValue]);
+  
   useEffect(() => {
-    calculateBackward(toValue, conversionRate);
-  }, [fromCurrency, toCurrency, toValue]);
+    if ((to === document.activeElement)) {
+      calculateBackward(toValue, conversionRate);
+      // eslint-disable-next-line
+    }
+  }, [conversionRate, toValue]);
 
   const handleFromCurrency = (event) => {
     setFromCurrency(event.target.value);
@@ -73,11 +84,8 @@ export default function Home() {
     setToValue(event.target.value);
   };
 
-  const fromRemove = () => {
+  const clear = () => {
     setFromValue("");
-  };
-
-  const toRemove = () => {
     setToValue("");
   };
 
@@ -119,12 +127,13 @@ export default function Home() {
           <input
             value={fromValue}
             onChange={handleFromValue}
+            id="from_input"
             type="number"
             className="form-control col-sm-4"
             aria-label="Text input with dropdown button"
             placeholder="0.00"
           />
-          {removeButton(fromRemove)}
+          {removeButton(clear)}
         </div>
         <div className="input-group mb-3 mt-4">
           <div className="row g-2">
@@ -148,17 +157,19 @@ export default function Home() {
           <input
             value={toValue}
             onChange={handleToValue}
+            id="to_input"
             type="number"
             className="form-control col-sm-4"
             aria-label="Text input with dropdown button"
             placeholder="0.00"
           />
-          {removeButton(toRemove)}
+          {removeButton(clear)}
         </div>
         <a
           href="https://www.easymarkets.com/int/learn-centre/discover-trading/currency-acronyms-and-abbreviations/"
           target="_blank"
           noreferrer="true"
+          rel="noreferrer"
         >
           <div className="d-grid gap-2">
             <button className="btn btn-primary" type="button">
